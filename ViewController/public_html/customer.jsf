@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="customer.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:pageTemplate viewId="/oracle/templates/tabletFirstTemplate.jspx" id="pt1">
+                <f:facet name="header"/>
+                <f:facet name="status"/>
+                <f:facet name="appNav"/>
+                <f:facet name="globalLinks"/>
+                <f:facet name="footer"/>
+                <f:facet name="center">
+                    <af:panelBox text="Customer Information" id="pb1">
+                        <f:facet name="toolbar"/>
+                        <af:separator id="s1"/>
+                        <af:panelFormLayout id="pfl1">
+                            <af:inputText value="#{bindings.ID.inputValue}" label="#{bindings.ID.hints.label}"
+                                          required="#{bindings.ID.hints.mandatory}"
+                                          columns="#{bindings.ID.hints.displayWidth}"
+                                          maximumLength="#{bindings.ID.hints.precision}"
+                                          shortDesc="#{bindings.ID.hints.tooltip}" id="it1">
+                                <f:validator binding="#{bindings.ID.validator}"/>
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.ID.format}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.FIRSTNAME.inputValue}"
+                                          label="#{bindings.FIRSTNAME.hints.label}"
+                                          required="#{bindings.FIRSTNAME.hints.mandatory}"
+                                          columns="#{bindings.FIRSTNAME.hints.displayWidth}"
+                                          maximumLength="#{bindings.FIRSTNAME.hints.precision}"
+                                          shortDesc="#{bindings.FIRSTNAME.hints.tooltip}" id="it2">
+                                <f:validator binding="#{bindings.FIRSTNAME.validator}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.LASTNAME.inputValue}"
+                                          label="#{bindings.LASTNAME.hints.label}"
+                                          required="#{bindings.LASTNAME.hints.mandatory}"
+                                          columns="#{bindings.LASTNAME.hints.displayWidth}"
+                                          maximumLength="#{bindings.LASTNAME.hints.precision}"
+                                          shortDesc="#{bindings.LASTNAME.hints.tooltip}" id="it3">
+                                <f:validator binding="#{bindings.LASTNAME.validator}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.STREET.inputValue}" label="#{bindings.STREET.hints.label}"
+                                          required="#{bindings.STREET.hints.mandatory}"
+                                          columns="#{bindings.STREET.hints.displayWidth}"
+                                          maximumLength="#{bindings.STREET.hints.precision}"
+                                          shortDesc="#{bindings.STREET.hints.tooltip}" id="it4">
+                                <f:validator binding="#{bindings.STREET.validator}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.CITY.inputValue}" label="#{bindings.CITY.hints.label}"
+                                          required="#{bindings.CITY.hints.mandatory}"
+                                          columns="#{bindings.CITY.hints.displayWidth}"
+                                          maximumLength="#{bindings.CITY.hints.precision}"
+                                          shortDesc="#{bindings.CITY.hints.tooltip}" id="it5">
+                                <f:validator binding="#{bindings.CITY.validator}"/>
+                            </af:inputText>
+                        </af:panelFormLayout>
+                    </af:panelBox>
+                </f:facet>
+                <f:facet name="start"/>
+                <f:facet name="end"/>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+</f:view>

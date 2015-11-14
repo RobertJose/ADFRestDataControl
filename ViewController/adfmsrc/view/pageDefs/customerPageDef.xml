@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.2.1" id="customerPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <methodIterator Binds="customer1.result" DataControl="customer" RangeSize="25"
+                    BeanClass="model.customer.customer_Data" id="customer1Iterator"/>
+    <accessorIterator MasterBinding="customer1Iterator" Binds="CUSTOMER" RangeSize="25" DataControl="customer"
+                      BeanClass="model.customer.customer_Data_CUSTOMER" id="CUSTOMERIterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="customer1" RequiresUpdateModel="true" Action="invokeMethod" MethodName="customer"
+                  IsViewObjectMethod="false" DataControl="customer" InstanceName="data.customer"
+                  ReturnName="data.customer.methodResults.customer_customer_customer_result"/>
+    <attributeValues IterBinding="CUSTOMERIterator" id="ID">
+      <AttrNames>
+        <Item Value="ID"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CUSTOMERIterator" id="FIRSTNAME">
+      <AttrNames>
+        <Item Value="FIRSTNAME"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CUSTOMERIterator" id="LASTNAME">
+      <AttrNames>
+        <Item Value="LASTNAME"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CUSTOMERIterator" id="STREET">
+      <AttrNames>
+        <Item Value="STREET"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CUSTOMERIterator" id="CITY">
+      <AttrNames>
+        <Item Value="CITY"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>
